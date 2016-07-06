@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Portfolio</title>
+   <title>TafDev</title>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  
+  <header id ="main_navigation" class="clearfix">
+    <%= link_to "TafDev", root_path, class: "name" %>
+      <nav>
+        <%= link_to "Articles", posts_path %>
+        <a href="#">Projects</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
 
 <%= yield %>
 
+ <footer id="main_footer">
+      <p class="copyright">	&copy;2016 Tafadzwa Chombo</p>
+      <nav>
+        <a href = "https://github.com/TafDev" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+        <a href = "https://uk.linkedin.com/in/tafadzwa-chombo-4a2a1086" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+      </nav>
+      
+    </footer>
 </body>
 </html>

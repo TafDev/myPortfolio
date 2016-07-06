@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TafDev</title>
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-  </head>
+   
   
   <body>
-    <header id ="main_navigation" class="clearfix">
-      <a href="#" class="name">TafDev</a>
-      <nav>
-        <a href="#">Articles</a>
-        <a href="#">Projects</a>
-        <a href="#">Contact</a>
-      </nav>
-    </header>
     
-    <div class="wrapper clearfix">
-      <div class="col-1 homepage_content">
+    
+    <div class="wrapper wrapper-padding clearfix">
+      <div class="col-1 about homepage_content">
         <h2>About</h2>
         <hr>
         <p> lorem ipsum todor le value pon sincatir. lorem ipsum todor le value pon sincatir. </p>
-        <p> lorem ipsum todor le value pon sincatir. lorem ipsum todor le value pon sincatir. </p>
+        <p> lorem ipsum todor le value pon <a href = "#">sincatir </a>. lorem ipsum todor le value pon sincatir. </p>
         <p> lorem ipsum todor le value pon sincatir.</p>
       </div>
       
       <div class="col-2 homepage_content">
+        <h2>stuff i wrote</h2>
+        <hr>
         
+        <% @posts.each do |post| %>
+          <h3><a href="#"><%= link_to post.title, post %></a></h3>
+          <p class="date"><%= post.created_at.strftime("%A, %b, %d") %></p>
+        
+        <% end %>
+      
       </div>
       
       <div class="col-3 homepage_content">
-        
+        <h2>stuff i created</h2>
+        <hr>
+        <h3>the do list</h3>
+        <p class="date">Friday 13 May</p>
+        <h3>the do list</h3>
+        <p class="date">Friday 13 May</p>
+        <h3>the do list</h3>
+        <p class="date">Friday 13 May</p>
       </div>
     </div>
+    
+   
   </body>
 </html>
