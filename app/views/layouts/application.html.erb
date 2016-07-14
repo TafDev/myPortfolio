@@ -8,19 +8,24 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
   
-  <header id ="main_navigation" class="clearfix">
+  <nav class="navbar navbar-dark bg-inverse">
     <%= link_to "TafDev", root_path, class: "name" %>
-      <nav>
+      
         <%= link_to "Blog", posts_path %>
         <%= link_to "Projects", projects_path %>
         <%= link_to "Contact", new_contact_path %>
         <% if user_signed_in? %>
              <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
          <% end %>
-      </nav>
-    </header>
+  <!-- Navbar content -->
+</nav>
+
+    
+      
+    </div>
     
     <% if notice %>
       <p class="notice"><%= notice %></p>
@@ -31,6 +36,7 @@
 
 <%= yield %>
 
+
  <footer id="main_footer">
       <p class="copyright">	&copy;2016 Tafadzwa Chombo</p>
       <nav>
@@ -39,5 +45,6 @@
       </nav>
       
     </footer>
+
 </body>
 </html>
